@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ This Source Code Form is subject to the terms of the Mozilla Public
+  ~ License, v. 2.0. If a copy of the MPL was not distributed with this
+  ~ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+  ~
+  ~ Created by: Dragon1573
+  ~ Last Modified: 2020/07/31 23:07:49 CST
+  -->
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<DialogPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx"
+            fx:controller="wang.dragon1573.controller.ReplaceController">
+  <content>
+    <GridPane alignment="CENTER" hgap="25" vgap="10">
+      <Label alignment="CENTER" text="查找内容：" textAlignment="CENTER"
+             GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="0"
+             GridPane.valignment="CENTER" />
+      <TextField fx:id="searchField" GridPane.columnIndex="1" GridPane.columnSpan="2"
+                 GridPane.halignment="LEFT" GridPane.rowIndex="0" GridPane.rowSpan="1"
+                 GridPane.valignment="CENTER" />
+      <Button alignment="CENTER" maxHeight="65535" maxWidth="65535" text="查找"
+              textAlignment="CENTER" GridPane.columnIndex="3" GridPane.halignment="CENTER"
+              GridPane.rowIndex="0" GridPane.valignment="CENTER" fx:id="searchButton"
+              disable="true" onAction="#search" />
+      <Label alignment="CENTER" text="替换为：" textAlignment="CENTER"
+             GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="1"
+             GridPane.valignment="CENTER" />
+      <TextField GridPane.columnIndex="1" GridPane.columnSpan="2" fx:id="replaceField"
+                 GridPane.valignment="CENTER" GridPane.halignment="LEFT"
+                 GridPane.rowIndex="1" GridPane.rowSpan="1" />
+      <Button alignment="CENTER" maxHeight="65535" maxWidth="65535" text="替换"
+              textAlignment="CENTER" GridPane.columnIndex="3" GridPane.halignment="CENTER"
+              GridPane.rowIndex="1" GridPane.valignment="CENTER" onAction="#replaceSingle"
+              fx:id="replaceSingleButton" disable="true" />
+      <Text textAlignment="CENTER" GridPane.columnIndex="0" GridPane.columnSpan="3"
+            GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.rowSpan="1"
+            GridPane.valignment="CENTER" fx:id="keywordCounter" />
+      <Button alignment="CENTER" text="全部替换" textAlignment="CENTER" disable="true"
+              GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2"
+              GridPane.valignment="CENTER" fx:id="replaceAllButton"
+              onAction="#replaceAll" />
+      <CheckBox fx:id="caseSensitiveBox" alignment="CENTER" text="大小写敏感"
+                textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+      <RadioButton alignment="CENTER" text="向上替换" textAlignment="CENTER"
+                   GridPane.columnIndex="1" GridPane.halignment="CENTER"
+                   onAction="#replaceForward" GridPane.rowIndex="3"
+                   GridPane.valignment="CENTER">
+        <toggleGroup>
+          <ToggleGroup fx:id="group" />
+        </toggleGroup>
+      </RadioButton>
+      <RadioButton alignment="CENTER" text="向下替换" textAlignment="CENTER"
+                   GridPane.columnIndex="2" GridPane.halignment="CENTER" selected="true"
+                   GridPane.rowIndex="3" GridPane.valignment="CENTER"
+                   toggleGroup="$group" onAction="#replaceBackwards" />
+      <Button alignment="CENTER" cancelButton="true" maxHeight="65535" maxWidth="65535"
+              text="取消" textAlignment="CENTER" GridPane.columnIndex="3"
+              GridPane.halignment="CENTER" GridPane.rowIndex="3"
+              GridPane.valignment="CENTER" onAction="#closeDialog" />
+    </GridPane>
+  </content>
+</DialogPane>

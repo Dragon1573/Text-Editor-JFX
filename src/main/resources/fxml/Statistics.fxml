@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ This Source Code Form is subject to the terms of the Mozilla Public
+  ~ License, v. 2.0. If a copy of the MPL was not distributed with this
+  ~ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+  ~
+  ~ Created by: Dragon1573
+  ~ Last Modified: 2020/07/31 23:07:49 CST
+  -->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx"
+          fx:controller="wang.dragon1573.controller.StatisticsController"
+          alignment="CENTER">
+  <padding>
+    <Insets left="5" right="5" top="5" bottom="5" />
+  </padding>
+  <Label text="行数：" GridPane.halignment="CENTER" GridPane.rowIndex="0"
+         GridPane.columnIndex="0" GridPane.valignment="CENTER" />
+  <Label fx:id="linesLabel" GridPane.halignment="CENTER" GridPane.valignment="CENTER"
+         GridPane.rowIndex="0" GridPane.columnIndex="1" />
+  <Label text="字符数（不计空格）：" GridPane.halignment="CENTER" GridPane.valignment="CENTER"
+         GridPane.rowIndex="1" GridPane.columnIndex="0" />
+  <Label fx:id="charNoSpaceLabel" GridPane.halignment="CENTER"
+         GridPane.valignment="CENTER" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+  <Label text="字符数（计空格）：" GridPane.halignment="CENTER" GridPane.valignment="CENTER"
+         GridPane.rowIndex="2" GridPane.columnIndex="0" />
+  <Label fx:id="charWithSpaceLabel" GridPane.halignment="CENTER"
+         GridPane.valignment="CENTER" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+</GridPane>

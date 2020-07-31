@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ This Source Code Form is subject to the terms of the Mozilla Public
+  ~ License, v. 2.0. If a copy of the MPL was not distributed with this
+  ~ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+  ~
+  ~ Created by: Dragon1573
+  ~ Last Modified: 2020/07/31 23:07:49 CST
+  -->
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx"
+            fx:controller="wang.dragon1573.controller.MainController">
+  <!-- 顶部菜单栏 -->
+  <top>
+    <!-- 菜单栏 -->
+    <MenuBar>
+      <!-- 文件菜单 -->
+      <Menu text="文件 (_F)">
+        <MenuItem onAction="#newFile" accelerator="Ctrl+N" text="新建 (_N)" />
+        <MenuItem onAction="#saveFile" accelerator="Ctrl+S" text="保存 (_S)" />
+        <MenuItem onAction="#openFile" accelerator="Ctrl+O" text="打开 (_O)" />
+      </Menu>
+      <!-- 编辑菜单 -->
+      <Menu text="编辑 (_E)">
+        <MenuItem onAction="#searchKeyWord" accelerator="Ctrl+F" text="查找 (_F)" />
+        <MenuItem onAction="#replaceKeyWord" accelerator="Ctrl+R" text="替换 (_R)" />
+        <MenuItem onAction="#switchCapital" text="大小写转换 (_C)" />
+        <MenuItem onAction="#wordCount" text="统计 (_S)" />
+      </Menu>
+      <!-- 格式菜单 -->
+      <Menu text="格式 (_O)">
+        <CheckMenuItem onAction="#toggleWrapState" selected="true" text="自动换行 (_W)" />
+        <MenuItem onAction="#changeFont" accelerator="Ctrl+D" text="字体设置 (_F)" />
+      </Menu>
+      <!-- 帮助菜单 -->
+      <Menu text="帮助 (_H)">
+        <MenuItem accelerator="F1" onAction="#getVersion" text="关于 (_A)" />
+      </Menu>
+    </MenuBar>
+  </top>
+  <!-- 中心编辑区 -->
+  <center>
+    <TextArea fx:id="content" wrapText="true" style="-fx-font-family: '宋体';
+     -fx-font-style: 'normal'; -fx-font-weight: 'normal'; -fx-font-size: 12px" />
+  </center>
+  <!-- 底部状态栏 -->
+  <bottom>
+    <GridPane BorderPane.alignment="CENTER">
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints vgrow="SOMETIMES" />
+      </rowConstraints>
+      <HBox>
+        <padding>
+          <Insets left="5.0" top="5.0" />
+        </padding>
+        <Label fx:id="fileName" contentDisplay="CENTER" textAlignment="CENTER" />
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="23.0" prefWidth="369.0"
+            GridPane.columnIndex="1">
+        <ChoiceBox fx:id="lineSeparator">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="CRLF - Windows (\r\n)" />
+              <String fx:value="LF - Unix &amp; Linux (\n)" />
+              <String fx:value="CR - Classic Unix (\r)" />
+            </FXCollections>
+          </items>
+        </ChoiceBox>
+        <Button text="1:1" fx:id="caretButton" onAction="#jumpCaret" />
+      </HBox>
+    </GridPane>
+  </bottom>
+</BorderPane>

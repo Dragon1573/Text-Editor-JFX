@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ This Source Code Form is subject to the terms of the Mozilla Public
+  ~ License, v. 2.0. If a copy of the MPL was not distributed with this
+  ~ file, You can obtain one at http://mozilla.org/MPL/2.0/.
+  ~
+  ~ Created by: Dragon1573
+  ~ Last Modified: 2020/07/31 23:07:49 CST
+  -->
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<GridPane xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" hgap="10" vgap="5"
+          xmlns="http://javafx.com/javafx/10.0.2-internal"
+          fx:controller="wang.dragon1573.controller.FontController">
+  <Label text="字体：" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+  <Label text="字形：" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+  <Label text="字号：" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+  <ChoiceBox fx:id="familyBox" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+  <ChoiceBox fx:id="styleBox" GridPane.columnIndex="1" GridPane.rowIndex="1">
+    <String fx:value="常规" />
+    <String fx:value="粗体" />
+    <String fx:value="斜体" />
+    <String fx:value="粗体＋斜体" />
+  </ChoiceBox>
+  <ChoiceBox fx:id="sizeBox" GridPane.columnIndex="2" GridPane.rowIndex="1">
+    <Integer fx:value="8" />
+    <Integer fx:value="9" />
+    <Integer fx:value="10" />
+    <Integer fx:value="11" />
+    <Integer fx:value="12" />
+    <Integer fx:value="14" />
+    <Integer fx:value="16" />
+    <Integer fx:value="18" />
+    <Integer fx:value="20" />
+    <Integer fx:value="22" />
+    <Integer fx:value="24" />
+    <Integer fx:value="26" />
+    <Integer fx:value="28" />
+    <Integer fx:value="36" />
+    <Integer fx:value="48" />
+    <Integer fx:value="72" />
+  </ChoiceBox>
+  <Text fx:id="sampleText" text="べ断桥烟雨ミ @Dragon1573" GridPane.columnSpan="3"
+        GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+  <Region prefHeight="75.0" GridPane.columnSpan="3" GridPane.rowIndex="2" />
+  <columnConstraints>
+    <ColumnConstraints />
+    <ColumnConstraints />
+    <ColumnConstraints />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints />
+    <RowConstraints />
+    <RowConstraints />
+  </rowConstraints>
+</GridPane>
