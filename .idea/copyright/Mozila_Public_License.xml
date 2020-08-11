@@ -1,0 +1,8 @@
+<component name="CopyrightManager">
+  <copyright>
+    <option name="allowReplaceRegexp" value=".*" />
+    <option name="keyword" value=".*" />
+    <option name="notice" value="This Source Code Form is subject to the terms of the Mozilla Public &#10;License, v. 2.0. If a copy of the MPL was not distributed with this &#10;file, You can obtain one at http://mozilla.org/MPL/2.0/.&#10;&#10;Created by: Dragon1573&#10;Last Modified: &amp;#36;file.lastModified.format(&quot;yyyy/MM/dd HH:mm:ss z&quot;)" />
+    <option name="myName" value="Mozila Public License" />
+  </copyright>
+</component>

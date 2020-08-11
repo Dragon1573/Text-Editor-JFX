@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="Mozila Public License" pattern="file[Text-Editor]:src/main/java//*||file[Text-Editor]:src/main/resources/fxml//*||file[Text-Editor]:src/main/templates//*||file:pom.xml" />
+</component>
